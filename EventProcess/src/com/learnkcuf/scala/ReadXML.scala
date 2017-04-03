@@ -5,33 +5,17 @@ package com.learnkcuf.scala
   */
 object ReadXML {
 
-  val dbconnection =
-    <rss>
-      <databaseconnection>
-        <description>Database connection details</description>
-        <item1>
-          <title>Hive connection details</title>
-          <DB1 connectionstring="1"
-                driver=""
-                username=""
-                password=""/>
-        </item1>
-        <item2>
-          <title>Mysql connection details</title>
-          <DB2 connectionstring="2"
-                driver=""
-                username=""
-                password=""/>
-        </item2>
-      </databaseconnection>
-    </rss>
+  import scala.xml.XML
+  val xmlcontent = XML.loadFile("/Users/A072837/git/EventProcessingWithRules/EventProcessingWithRules/EventProcess/EventProcess.xml")
 
-  val DB1 = dbconnection \ "databaseconnection" \ "item1" \ "DB1"
-  val DB2 = dbconnection \ "databaseconnection" \ "item2" \ "DB2"
+  val DB1 = xmlcontent \ "databaseconnection" \ "item1" \ "DB1"
+  val DB2 = xmlcontent \ "databaseconnection" \ "item2" \ "DB2"
 
-  val connstring = DB1 \ "@connectionstring"
-  val
+  val connstring1 = DB1 \ "@connectionstring"
+  val connstring2 = DB2 \ "@connectionstring"
 
-  print(connstring)
+  print(connstring1)
+  print(connstring2)
+
 
 }
