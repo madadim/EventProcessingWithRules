@@ -5,23 +5,33 @@ package com.learnkcuf.scala
   */
 object ReadXML {
 
-  val weather =
+  val dbconnection =
     <rss>
-      <channel>
-        <title>Yahoo! Weather - Boulder, CO</title>
-        <item>
-          <title>Conditions for Boulder, CO at 2:54 pm MST</title>
-          <forecast day="Thu" date="10 Nov 2011" low="37" high="58" text="Partly Cloudy"
-                    code="29" />
-        </item>
-      </channel>
+      <databaseconnection>
+        <description>Database connection details</description>
+        <item1>
+          <title>Hive connection details</title>
+          <DB1 connectionstring="1"
+                driver=""
+                username=""
+                password=""/>
+        </item1>
+        <item2>
+          <title>Mysql connection details</title>
+          <DB2 connectionstring="2"
+                driver=""
+                username=""
+                password=""/>
+        </item2>
+      </databaseconnection>
     </rss>
 
+  val DB1 = dbconnection \ "databaseconnection" \ "item1" \ "DB1"
+  val DB2 = dbconnection \ "databaseconnection" \ "item2" \ "DB2"
 
-  val forecast = weather \ "channel" \ "item" \ "forecast"
+  val connstring = DB1 \ "@connectionstring"
+  val
 
-  val day = forecast \ "@day"
-
-  print(day)
+  print(connstring)
 
 }
