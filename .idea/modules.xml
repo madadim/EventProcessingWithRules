@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/EventProcess/EventProcess.iml" filepath="$PROJECT_DIR$/EventProcess/EventProcess.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/EventProcessingWithRules.iml" filepath="$PROJECT_DIR$/.idea/EventProcessingWithRules.iml" />
     </modules>
   </component>
 </project>
